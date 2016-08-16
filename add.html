@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>New Debtor</title>
+</head>
+<body>
+  <h1>Add New Debtor</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <form action='/add' method='POST'>
+    Name:<input type="text" name="name">
+    Address:<input type="text" name="address">
+    Phone #:<input type="text" name="phone">
+    List of valuables:<input type="text" name="valuable_list">
+    Amount owed:<input type="text" name="amount">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
